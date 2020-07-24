@@ -47,6 +47,8 @@ public class AnnotationSteps {
 
 	@Before
 	public void setup(){
+		//if in Linux OS
+		System.setProperty("webdriver.chrome.driver", "/src/main/resources/util/linux_chromedriver");
 		driver = new SlowWebDriver(new ChromeDriver(), 500);
 		wait = new WebDriverWait(driver, 20);
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
