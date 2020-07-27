@@ -47,8 +47,6 @@ public class AnnotationSteps {
 
 	@Before
 	public void setup(){
-		//if in Linux OS
-		System.setProperty("webdriver.chrome.driver", "/opt/squash-tf-server/execution_home/workspace/test2/src/main/resources/util/linux_chromedriver.sh");
 		driver = new SlowWebDriver(new ChromeDriver(), 500);
 		wait = new WebDriverWait(driver, 20);
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
