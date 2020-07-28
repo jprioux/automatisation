@@ -31,4 +31,8 @@ public class AbstractPage {
     public boolean checkElementWithId(String id){
         return getDriver().findElements(By.id(id)).size() != 0;
     }
+
+    public boolean checkElementWithXpath(String xpath){
+        return getDriver().findElements(By.xpath(xpath)).size() != 0;
+    }
 }

@@ -9,6 +9,6 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = { "classpath:squash/tc_10523.feature" })
+        features = { "classpath:squash/tc_10488.feature" }) //"src/test/resources"
 public class RunTest {
 }

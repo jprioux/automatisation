@@ -24,6 +24,7 @@ import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.fr.Alors;
 import cucumber.api.java.fr.Etantdonnéque;
+import cucumber.api.java.fr.Etque;
 import cucumber.api.java.fr.Quand;
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -32,6 +33,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import squash.page.ActionWordWorkspacePage;
 import squash.page.HomeWorkspacePage;
 import squash.page.LoginPage;
 import squash.page.TestCaseInfoPage;
@@ -81,6 +83,40 @@ public class AnnotationSteps {
 		testCaseInfoPage.checkElementWithId("test-case-name-div");
 		WebElement testCaseNameElement = testCaseInfoPage.getDriver().findElement(By.id("test-case-name"));
 		Assert.assertEquals("Test case name href must be the same to test case url.", testCaseUrl, testCaseNameElement.getAttribute("href"));
+	}
+
+	/////////////////// 10488 //////////////////
+	@Etantdonnéque("il existe une action {string} d'id {int} dans la librairie {int}")
+	public void il_existe_une_action_d_id_dans_la_librairie(String existingAction, int actionWordId, int libraryId) {
+		String testCaseUrl = SQUASH_URL+"/action-word-workspace";
+		driver.get(testCaseUrl);
+		ActionWordWorkspacePage actionWordWorkspacePage = new ActionWordWorkspacePage(driver);
+		actionWordWorkspacePage.findExistingAction(wait, existingAction, actionWordId, libraryId);
+	}
+
+	@Quand("je souhaite modifier le pas de test avec l'action {string}")
+	public void je_souhaite_modifier_le_pas_de_test_avec_l_action(String actionToModify) {
+		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
+		testCaseInfoPage.initActionInTestStep(wait, actionToModify);
+	}
+
+	@Etque("je supprime dans le pas de test le paramètre pour saisir {string}")
+	public void je_supprime_dans_le_pas_de_test_le_parametre_pour_saisir(String existingAction) {
+		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
+		testCaseInfoPage.modifyActionInKeywordTestStep(wait, existingAction);
+	}
+
+	@Etque("je valide ma modification du pas de test")
+	public void je_valide_ma_modification_du_pas_de_test() {
+		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
+		testCaseInfoPage.confirmKeywordTestStepModification(wait);
+	}
+
+	@Alors("le pas de test est bien modifié avec l'action {string}")
+	public void le_pas_de_test_est_bien_modifie_avec_l_action(String updatedAction) {
+		TestCaseInfoPage testCaseInfoPage = new TestCaseInfoPage(driver);
+		testCaseInfoPage.checkActionInKeywordTestStep(wait, updatedAction);
+		System.out.println("Le pas de test a bien été modifié");
 	}
 
 	////////////////// 239 //////////////////
