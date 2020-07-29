@@ -2,6 +2,7 @@
 # Automation status: TRANSMITTED
 # Test case importance: LOW
 # language: fr
+linked-TC : 99c13baf-3d22-4479-8feb-24396f6ffef3
 Fonctionnalité: US-742 - Supprimer des paramètres d'une action
   
   Scénario: Suppression de paramètres et plus de correspondance avec une action de la bibliothèque
