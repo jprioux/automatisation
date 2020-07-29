@@ -10,8 +10,8 @@ Fonctionnalité: US-742 - Supprimer des paramètres d'une action
 		Etant donné que je me connecte en tant que "admin" avec mot de passe "admin"
 		Etant donné que je suis sur la page d'accueil Squash
 
-		Etant donné que il existe une action "je saisis quelque chose" d'id 18 dans la librairie 1
-		Etant donné que je navigate au CdT BBD dont l'id est 240
+		Etant donné que il existe une action "je saisis quelque chose" d'id 396 dans la librairie 395
+		Etant donné que je navigate au CdT BBD dont l'id est 22952
 		Quand je souhaite modifier le pas de test avec l'action "je saisis quelque chose \"à supprimer\""
 		Et que je supprime dans le pas de test le paramètre pour saisir "je saisis quelque chose"
 		Et que je valide ma modification du pas de test

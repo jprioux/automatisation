@@ -8,7 +8,7 @@ Fonctionnalité: US998- Gestion des erreurs pour les paramètres liés à un cas
     Etant donné que je suis sur la page d'authentification Squash
     Etant donné que je me connecte en tant que "admin" avec mot de passe "admin"
     Etant donné que je suis sur la page d'accueil Squash
-    Etant donné que je navigate au CdT BBD dont l'id est 240
+    Etant donné que je navigate au CdT BBD dont l'id est 22952
 
     Etant donné que je saisis le texte pour une nouvelle action "Today is "
     Etant donné que je saisis le param pour une nouvelle action <saisie>

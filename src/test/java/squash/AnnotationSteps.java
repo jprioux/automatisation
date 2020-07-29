@@ -42,14 +42,14 @@ import squash.utils.SlowWebDriver;
 import java.util.concurrent.TimeUnit;
 
 public class AnnotationSteps {
-	private static final String SQUASH_URL = "http://192.168.0.138:8080/squash";
+	private static final String SQUASH_URL = "http://squashtm-postgres.squashtest.org:8081/squash";
 	private WebDriver driver;
 	private WebDriverWait wait;
 	private WebElement popup;
 
 	@Before
 	public void setup(){
-		driver = new SlowWebDriver(new ChromeDriver(), 500);
+		driver = new SlowWebDriver(new ChromeDriver(), 750);
 		wait = new WebDriverWait(driver, 20);
 		driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
 		driver.get(SQUASH_URL);
