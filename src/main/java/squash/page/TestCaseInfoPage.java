@@ -59,9 +59,12 @@ public class TestCaseInfoPage extends AbstractPage {
     }
 
     public void confirmKeywordTestStepModification(WebDriverWait wait) {
-        WebElement keywordTestStepModifyButton = getDriver().findElement(By.xpath("//*[@id=\"keyword-test-step-table\"]/tbody/tr["+lastRowNumber+"]/td[3]/form/button[1]"));
+/*        WebElement keywordTestStepModifyButton = getDriver().findElement(By.xpath("//*[@id=\"keyword-test-step-table\"]/tbody/tr["+lastRowNumber+"]/td[3]/form/button[1]"));
         wait.until(ExpectedConditions.elementToBeClickable(keywordTestStepModifyButton));
-        keywordTestStepModifyButton.click();
+        keywordTestStepModifyButton.click();*/
+        WebElement cellToModifyInput = getDriver().findElement(By.xpath("//*[@id=\"keyword-test-step-table\"]/tbody/tr["+lastRowNumber+"]/td[3]/form/input"));
+        wait.until(ExpectedConditions.elementToBeClickable(cellToModifyInput));
+        cellToModifyInput.sendKeys(Keys.RETURN);
     }
 
     public void checkActionInKeywordTestStep(WebDriverWait wait, String updatedAction) {
