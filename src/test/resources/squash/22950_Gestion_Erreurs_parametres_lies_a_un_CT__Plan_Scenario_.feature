@@ -6,7 +6,7 @@ Fonctionnalité: US998- Gestion des erreurs pour les paramètres liés à un cas
 
   Plan du Scénario: Saisie incorrecte d'un paramètre d'une action
     Etant donné que je suis sur la page d'authentification Squash
-    Etant donné que je me connecte en tant que "admin" avec mot de passe "admin"
+    Etant donné que je me connecte en tant que "jeremie" avec mot de passe "jeremie"
     Etant donné que je suis sur la page d'accueil Squash
     Etant donné que je navigate au CdT BBD dont l'id est 22952
 

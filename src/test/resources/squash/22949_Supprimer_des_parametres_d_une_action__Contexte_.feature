@@ -7,7 +7,7 @@ Fonctionnalité: US-742 - Supprimer des paramètres d'une action
 
 	Scénario: Suppression de paramètres et plus de correspondance avec une action de la bibliothèque
 		Etant donné que je suis sur la page d'authentification Squash
-		Etant donné que je me connecte en tant que "admin" avec mot de passe "admin"
+		Etant donné que je me connecte en tant que "jeremie" avec mot de passe "jeremie"
 		Etant donné que je suis sur la page d'accueil Squash
 
 		Etant donné que il existe une action "je saisis quelque chose" d'id 396 dans la librairie 395
