@@ -26,6 +26,7 @@ import cucumber.api.java.fr.Alors;
 import cucumber.api.java.fr.Etantdonnéque;
 import cucumber.api.java.fr.Etque;
 import cucumber.api.java.fr.Quand;
+import cucumber.runtime.junit.Assertions;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -72,7 +73,8 @@ public class AnnotationSteps {
 	@Etantdonnéque("je suis sur la page d'accueil Squash")
 	public void je_suis_sur_la_page_d_accueil_Squash() {
 		HomeWorkspacePage homePage = new HomeWorkspacePage(driver);
-		Assert.assertTrue(homePage.checkHomePage());
+		//Assert.assertTrue(homePage.checkHomePage());
+		Assert.assertTrue("<script>alert(\"boooooooo\")</script>", homePage.toString().contains("Blog"));
 	}
 
 	@Etantdonnéque("je navigate au CdT BBD dont l'id est {long}")
